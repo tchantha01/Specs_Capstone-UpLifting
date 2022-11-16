@@ -53,8 +53,8 @@ class Exercise(db.Model):
     __tablename__ = 'exercises'
     
     exercise_id = db.Column(db.Integer, primary_key = True, autoincrement = True)
-    title = db.Column(db.String(225))
-    overview = db.Column(db.Text)
+    exercise_name = db.Column(db.String(225))
+    description = db.Column(db.Text)
     exercise_img = db.Column(db.String(225))   
     
     def __repr__(self):

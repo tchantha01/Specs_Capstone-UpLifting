@@ -11,36 +11,7 @@
 </head>
 <body>
     
-    <header>
-        <nav class="nav">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                {% if page == "homepage" %}
-                    <a class="nav-link active" aria-current="page" href="#">
-                {% else %}
-                    <a class="nav-link" href="{{ url_for('homepage') }}">
-                {% endif %}
-                      Home</a>
-                </li>
-                <li class="nav-item">
-                {% if page == "teams" %}
-                    <a class="nav-link active" aria-current="page" href="#">
-                {% else %}
-                    <a class="nav-link" href="{{ url_for('teams') }}">
-                {% endif %}
-                  Teams</a>
-                </li>
-                <li class="nav-item">
-                {% if page == "projects" %}
-                    <a class="nav-link active" aria-current="page" href="#">
-                {% else %}
-                    <a class="nav-link" href="{{ url_for('projects') }}">
-                {% endif %}
-                    Projects</a>
-                </li>
-              </ul>
-            </nav>
-    </header>
+   
     <main>
         {% block main %}
         {% endblock %}

@@ -1,0 +1,95 @@
+{
+    "back": [
+    {
+        "exercise_name":"Deadlift",
+        "description":"Lift the weight from the ground to thigh-level using primarily your leg and hip muscles, but with the assistance of most of the large muscle groups of your body.",
+        "exercise_img":"https://www.crossfit.com/wp-content/uploads/2019/01/08091457/ESS_Deadlift_WEB.jpg"
+    },
+    {
+        "exercise_name":"Pull-ups",
+        "description":"Grasp the bar with an overhand grip with your hands just wider than shoulder-width apart. Let your body hang straight down with your arms fully extended. Pull up and squeeze your lats until your chin is over the bar, before lowering slowly to the start position without swinging",
+        "exercise_img":"https://mikereinold.com/wp-content/uploads/rookie-mistakes-the-pullup-main.jpg"
+    },
+    {
+        "exercise_name":"30 Degree Lat Pulldown",
+        "description":"Lean back slightly, push out your chest, and keep your shoulders down. Pull the handle down toward your sternum. Squeeze your shoulder blades down and together. Reverse the movement to return the bar to the starting position.",
+        "exercise_img":"https://www.muscleandfitness.com/wp-content/uploads/2014/02/306_B.jpg?w=800&h=630&crop=1&quality=86&strip=all"
+    },
+    {
+        "exercise_name":"One Arm, One Leg Plank",
+        "description":"Your neck and spine should be neutral. Continue to flex your abs and squeeze your glutes. Keeping your left forearm still on the mat, raise your right arm straight in front of you. Also, lift your opposite leg (your left leg) straight back and off the floor, while keeping your right foot still on the mat.",
+        "exercise_img":"https://s3.amazonaws.com/external_clips/attachments/246163/original/open-uri20170823-27141-9d4goi?1503450168"
+    }
+    ],
+
+    "chest": [
+    {
+        "exercise_name":"Barbell Bench Press",
+        "description":"While lying on a bench and pressing weight upward using a barbell. During a bench press, you lower the weight down to chest level and then press upwards while extending your arms.",
+        "exercise_img":"https://i.ytimg.com/vi/XSza8hVTlmM/maxresdefault.jpg"
+    },
+    {
+        "exercise_name":"Pushups",
+        "description":"Keep a prone position, with the hands palms down under the shoulders, the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.",
+        "exercise_img":"https://www.crossfit.com/wp-content/uploads/2019/02/08115603/Collage-PushUps.jpg"
+    },
+    {
+        "exercise_name":"Dumbbell Bench Press",
+        "description":"Lie back on a bench holding a dumbbell in each hand just to the sides of your shoulders. Your palms should be facing towards your feet in the starting position, press the weights above your chest by extending your elbows until your arms are straight, then bring the weights back down slowly. ",
+        "exercise_img":"https://s3.amazonaws.com/prod.skimble/assets/1550331/image_iphone.jpg"
+    },
+    {
+        "exercise_name":"Cable Crossover",
+        "description":"Set the handles at both ends of the pulleys at the highest level. Stand in the centre of the machine with feet shoulder-width apart. Bend your torso forwards slightly, keeping your spine neutral and back straight, and bend your elbows slightly as well, with your wrists facing the floor. Keeping your core engaged, pull both handles down and across your body. Squeeze your chest muscles in this fully contracted position (the handles do not have to be touching). Slowly reverse to the start position, keeping the bend in your elbows throughout.",
+        "exercise_img":"https://www.panattasport.com/resources/products/1fe111//pic-1fe111_01.jpg"
+    }
+    ],
+
+    "arms":[
+    {
+        "exercise_name":"Dumbbell Curl",
+        "description":"",
+        "exercise_img":""
+    },
+    {
+        "exercise_name":"",
+        "description":"",
+        "exercise_img":""
+    },
+    {
+        "exercise_name":"",
+        "description":"",
+        "exercise_img":""
+    },
+    {
+        "exercise_name":"",
+        "description":"",
+        "exercise_img":""
+    }
+    ],
+        
+
+    "legs":[
+    {
+        "exercise_name":"",    
+        "description":"",    
+        "exercise_img":""    
+    },
+    {
+        "exercise_name":"",    
+        "description":"",    
+        "exercise_img":""    
+    },    
+    {
+        "exercise_name":"",    
+        "description":"",    
+        "exercise_img":""    
+    },    
+    {
+        "exercise_name":"",    
+        "description":"",    
+        "exercise_img":""    
+    }        
+    ]       
+                
+}
