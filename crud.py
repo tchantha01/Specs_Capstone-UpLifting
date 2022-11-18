@@ -22,7 +22,13 @@ def get_user_by_id(user_id):
 def get_user_by_username(username):
     #Get user by username
     
-    return User.query.filter(User.username == username).first()
+    return User.query.filter_by(username = username).first()
+
+def create_exercise(exercise_name, description, exercise_img):
+    
+    exercise = Exercise(exercise_name = exercise_name, description = description, exercise_img = exercise_img)
+    
+    return exercise
 
 
 def get_exercises():

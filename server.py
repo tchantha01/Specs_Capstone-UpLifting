@@ -63,7 +63,7 @@ def login():
         session["user_username"] = user.username
         flash(f"Welcome back, {user.username}!")
         
-    return redirect('/')       
+    return render_template("workouts.html", username = user.username, password = user.password, user = user)      
 
 @app.route('/logout')
 def logout():
@@ -90,6 +90,14 @@ def get_exercises():
     exercises = crud.get_exercises()
 
     return render_template("all_exercises.html", exercises = exercises)
+
+@app.route('/exercises/<exercise_id>')
+def show_exercises(exercise_id):
+    #Show description of each exercise
+    
+    exercise = crud.get_exercise_by_id(exercise_id)
+    
+    return render_template("exercise_detail.html", exercise = exercise)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h1>{{ exercise.exercise_name }}</h1>
+
+<p>
+    {{ exercise.description }}
+</p>
+
+{% if session.get('username') %}
+<h2>Rate this exercise</h2>
+<form action="/exercises/{{ exercise.exercise_id }}/ratings" method="POST">
+    <p>
+        Rating:
+        <select name="rating">
+            <option valuse="">Select rating</option>
+            {% for num in range(6) %}
+                <option value="{{ num }}">{{ num }}</option>
+            {% endfor %}  
+        </select>
+    </p>
+    <p><input type="submit"></p>
+</form>
+{% endif %}              
+
+<img src="{{ exercise.exercise_img }}">
+
+
+{% endblock %}
