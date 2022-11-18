@@ -38,7 +38,7 @@ class Workout(db.Model):
     workout_name = db.Column(db.String(225), nullable = False)
     description = db.Column(db.String(255), nullable = True)
     completed = db.Column(db.Boolean, default = False)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable = False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable = False)
     
     def __init__(self, workout_name, completed, user_id, **kwargs):
         self.workout_name = workout_name
@@ -58,7 +58,7 @@ class Exercise(db.Model):
     exercise_img = db.Column(db.String(225))   
     
     def __repr__(self):
-        return f"<Exercise exercise_id = {self.exercise_id} title = {self.title}>"
+        return f"<Exercise exercise_id = {self.exercise_id} exercise_name = {self.exercise_name}>"
     
 class Rating(db.Model):
     

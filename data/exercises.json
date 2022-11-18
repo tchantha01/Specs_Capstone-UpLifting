@@ -1,0 +1,95 @@
+{
+    "back": [
+    {
+        "exercise_name":"Deadlift",
+        "description":"Lift the weight from the ground to thigh-level using primarily your leg and hip muscles, but with the assistance of most of the large muscle groups of your body.",
+        "exercise_img":"https://www.crossfit.com/wp-content/uploads/2019/01/08091457/ESS_Deadlift_WEB.jpg"
+    },
+    {
+        "exercise_name":"Pull-ups",
+        "description":"Grasp the bar with an overhand grip with your hands just wider than shoulder-width apart. Let your body hang straight down with your arms fully extended. Pull up and squeeze your lats until your chin is over the bar, before lowering slowly to the start position without swinging",
+        "exercise_img":"https://mikereinold.com/wp-content/uploads/rookie-mistakes-the-pullup-main.jpg"
+    },
+    {
+        "exercise_name":"30 Degree Lat Pulldown",
+        "description":"Lean back slightly, push out your chest, and keep your shoulders down. Pull the handle down toward your sternum. Squeeze your shoulder blades down and together. Reverse the movement to return the bar to the starting position.",
+        "exercise_img":"https://www.muscleandfitness.com/wp-content/uploads/2014/02/306_B.jpg?w=800&h=630&crop=1&quality=86&strip=all"
+    },
+    {
+        "exercise_name":"One Arm, One Leg Plank",
+        "description":"Your neck and spine should be neutral. Continue to flex your abs and squeeze your glutes. Keeping your left forearm still on the mat, raise your right arm straight in front of you. Also, lift your opposite leg (your left leg) straight back and off the floor, while keeping your right foot still on the mat.",
+        "exercise_img":"https://s3.amazonaws.com/external_clips/attachments/246163/original/open-uri20170823-27141-9d4goi?1503450168"
+    }
+    ],
+
+    "chest": [
+    {
+        "exercise_name":"Barbell Bench Press",
+        "description":"While lying on a bench and pressing weight upward using a barbell. During a bench press, you lower the weight down to chest level and then press upwards while extending your arms.",
+        "exercise_img":"https://i.ytimg.com/vi/XSza8hVTlmM/maxresdefault.jpg"
+    },
+    {
+        "exercise_name":"Pushups",
+        "description":"Keep a prone position, with the hands palms down under the shoulders, the balls of the feet on the ground, and the back straight, pushes the body up and lets it down by an alternate straightening and bending of the arms.",
+        "exercise_img":"https://www.crossfit.com/wp-content/uploads/2019/02/08115603/Collage-PushUps.jpg"
+    },
+    {
+        "exercise_name":"Dumbbell Bench Press",
+        "description":"Lie back on a bench holding a dumbbell in each hand just to the sides of your shoulders. Your palms should be facing towards your feet in the starting position, press the weights above your chest by extending your elbows until your arms are straight, then bring the weights back down slowly. ",
+        "exercise_img":"https://s3.amazonaws.com/prod.skimble/assets/1550331/image_iphone.jpg"
+    },
+    {
+        "exercise_name":"Cable Crossover",
+        "description":"Set the handles at both ends of the pulleys at the highest level. Stand in the center of the machine with feet shoulder-width apart. Bend your torso forwards slightly, keeping your spine neutral and back straight, and bend your elbows slightly as well, with your wrists facing the floor. Keeping your core engaged, pull both handles down and across your body. Squeeze your chest muscles in this fully contracted position (the handles do not have to be touching). Slowly reverse to the start position, keeping the bend in your elbows throughout.",
+        "exercise_img":"https://www.panattasport.com/resources/products/1fe111//pic-1fe111_01.jpg"
+    }
+    ],
+
+    "arms":[
+    {
+        "exercise_name":"Dumbbell Curl",
+        "description":"Hold a dumbbell with your palm facing upward. Slowly curl the weight up by bending your elbow, keeping your elbow close to your body. Then slowly lower the weight to the starting position.",
+        "exercise_img":"https://www.muscleandfitness.com/wp-content/uploads/2018/04/1109-dumbbell-curl1.jpg?quality=86&strip=all"
+    },
+    {
+        "exercise_name":"Standing Barbell Curl",
+        "description":"Stand up straight while holding a barbell in a shoulder-width grip. Contract your biceps to curl the weight forward. Your upper arms should remain stationary during this process. Continue moving the barbell until the biceps are fully contracted and the bar is at shoulder height. Hold this position for a second and then squeeze your biceps. Bring the barbell back to the starting position.",
+        "exercise_img":"https://i.pinimg.com/736x/76/0b/f1/760bf1c4d5757ee566f4cc547c765244--at-the-top-to-the.jpg"
+    },
+    {
+        "exercise_name":"Bench Dips",
+        "description":"Bend your legs to a 90 degree angle with your feet planted firmly on the ground, or extend them out in front of you (but don't lock your knees). Slowly lower your body straight down and then push back up, focusing on engaging your triceps.",
+        "exercise_img":"https://qph.cf2.quoracdn.net/main-qimg-dcbcea8eec6f044f9b8375d9ca598ec1.webp"
+    },
+    {
+        "exercise_name":"tricep Extensions",
+        "description":"Stands with your feet shoulder width apart. Grasp the weight with both hands and place behind your head, aiming for between your shoulder blades. Lift your arms so they're straight above your head, making sure your elbows don't flare outward too much",
+        "exercise_img":"https://www.foreo.com/mysa/wp-content/uploads/sites/2/2018/04/How-to-do-a-Tricep-Extension.jpg"
+    }
+    ],
+        
+
+    "legs":[
+    {
+        "exercise_name":"Squat",    
+        "description":"Stand straight with feet hip-width apart. Tighten your stomach muscles. Lower yourself as far as you can without leaning your upper body more than a few inches forward, as if you were lowering yourself onto a seat behind you. Don't allow your knees to go too far forward. Straighten your legs to lift back up. ",    
+        "exercise_img":"https://blog.fitbit.com/wp-content/uploads/2016/10/ArmStanding.jpg"    
+    },
+    {
+        "exercise_name":"Standing Leg Curl",    
+        "description":"Stand with feet hip-width apart. Shift your weight onto one leg and bend the other at the knee, bringing that foot closer to the butt. Lower the foot and repeat on the other side.",    
+        "exercise_img":"https://i.ytimg.com/vi/sMuh-Z4_PI8/maxresdefault.jpg"    
+    },    
+    {
+        "exercise_name":"Leg Extensions",    
+        "description":"Bend your knee and flex your hip to raise your thigh until it's parallel with the floor. Straighten your knee to extend your leg out in front of you. Hold the position for a second and then slowly return to your starting position.",    
+        "exercise_img":"https://www.tuffstuffitness.com/wp-content/uploads/2018/07/Bio-Arc-Leg-Extension-BA-707.jpg"    
+    },    
+    {
+        "exercise_name":"Calf Raise",    
+        "description":"stand with your feet about shoulder-width apart. Rise up onto your toes, then slowly return to the starting position.",    
+        "exercise_img":"https://www.outsideonline.com/wp-content/uploads/2022/01/cropcalfraises.jpg"    
+    }        
+    ]       
+                
+}

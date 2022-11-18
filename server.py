@@ -1,14 +1,17 @@
 #Server for workout app
 
 from flask import Flask, render_template, request, flash, session, redirect
-from model import db, connect_to_db
+from model import db, User, Workout, Exercise, connect_to_db
 import crud
+
 
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
 app.secret_key = "shhhhh"
 app.jinja_env.undefined = StrictUndefined
+
+user_id = 1
 
 @app.route('/')
 def homepage():
@@ -34,6 +37,14 @@ def register_user():
         flash("New account created! Please log in.")
         
         return redirect('/')
+    
+@app.route('/user')
+def get_user():
+    #View user
+    
+    users = crud.get_users()
+    
+    return render_template("homepage.html", users = users)    
     
 @app.route('/login', methods=["POST"])
 def login():
@@ -63,7 +74,22 @@ def logout():
     
     return redirect('/')
 
+@app.route('/workouts')
+def workouts():
+    #View workouts
+    
+    user = crud.get_user_by_id(user_id)
+    workouts = User.get_all_workouts()
+    
+    return render_template("workouts.html", title = "workouts", page = "workouts", workouts = workouts, user = user)
 
+@app.route('/exercises')
+def get_exercises():
+    #Show the list of exercises
+    
+    exercises = crud.get_exercises()
+
+    return render_template("all_exercises.html", exercises = exercises)
 
 
 if __name__ == "__main__":

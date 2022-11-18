@@ -24,6 +24,7 @@ def get_user_by_username(username):
     
     return User.query.filter(User.username == username).first()
 
+
 def get_exercises():
     #Show all exercises
     
