@@ -24,7 +24,7 @@ with open("data/exercises.json") as f:
     
 #Create exercises, store them in list so we can use them to create ratings     
 exercises_in_db = []
-for exercise in exercise_data["back"] + exercise_data["chest"] + exercise_data["arms"] + exercise_data["legs"]:
+for exercise in exercise_data:
     exercise_name, description, exercise_img = (
         exercise["exercise_name"],
         exercise["description"],

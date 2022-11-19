@@ -11,6 +11,36 @@
 </head>
 <body>
     
+    <header>
+        <nav class="nav">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                {% if page == "homepage" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('homepage') }}">
+                {% endif %}
+                      Home</a>
+                </li>
+                <li class="nav-item">
+                {% if page == "workouts" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('workouts') }}">
+                {% endif %}
+                  Workouts</a>
+                </li>
+                <li class="nav-item">
+                {% if page == "exercises" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('get_exercises') }}">
+                {% endif %}
+                    Exercises</a>
+                </li>
+              </ul>
+            </nav>
+    </header>
     
    
     <main>

@@ -1,5 +1,5 @@
-{
-    "back": [
+[
+    
     {
         "exercise_name":"Deadlift",
         "description":"Lift the weight from the ground to thigh-level using primarily your leg and hip muscles, but with the assistance of most of the large muscle groups of your body.",
@@ -19,10 +19,10 @@
         "exercise_name":"One Arm, One Leg Plank",
         "description":"Your neck and spine should be neutral. Continue to flex your abs and squeeze your glutes. Keeping your left forearm still on the mat, raise your right arm straight in front of you. Also, lift your opposite leg (your left leg) straight back and off the floor, while keeping your right foot still on the mat.",
         "exercise_img":"https://s3.amazonaws.com/external_clips/attachments/246163/original/open-uri20170823-27141-9d4goi?1503450168"
-    }
-    ],
+    },
+    
 
-    "chest": [
+    
     {
         "exercise_name":"Barbell Bench Press",
         "description":"While lying on a bench and pressing weight upward using a barbell. During a bench press, you lower the weight down to chest level and then press upwards while extending your arms.",
@@ -42,10 +42,10 @@
         "exercise_name":"Cable Crossover",
         "description":"Set the handles at both ends of the pulleys at the highest level. Stand in the center of the machine with feet shoulder-width apart. Bend your torso forwards slightly, keeping your spine neutral and back straight, and bend your elbows slightly as well, with your wrists facing the floor. Keeping your core engaged, pull both handles down and across your body. Squeeze your chest muscles in this fully contracted position (the handles do not have to be touching). Slowly reverse to the start position, keeping the bend in your elbows throughout.",
         "exercise_img":"https://www.panattasport.com/resources/products/1fe111//pic-1fe111_01.jpg"
-    }
-    ],
+    },
 
-    "arms":[
+
+    
     {
         "exercise_name":"Dumbbell Curl",
         "description":"Hold a dumbbell with your palm facing upward. Slowly curl the weight up by bending your elbow, keeping your elbow close to your body. Then slowly lower the weight to the starting position.",
@@ -65,11 +65,11 @@
         "exercise_name":"tricep Extensions",
         "description":"Stands with your feet shoulder width apart. Grasp the weight with both hands and place behind your head, aiming for between your shoulder blades. Lift your arms so they're straight above your head, making sure your elbows don't flare outward too much",
         "exercise_img":"https://www.foreo.com/mysa/wp-content/uploads/sites/2/2018/04/How-to-do-a-Tricep-Extension.jpg"
-    }
-    ],
+    },
+    
         
 
-    "legs":[
+    
     {
         "exercise_name":"Squat",    
         "description":"Stand straight with feet hip-width apart. Tighten your stomach muscles. Lower yourself as far as you can without leaning your upper body more than a few inches forward, as if you were lowering yourself onto a seat behind you. Don't allow your knees to go too far forward. Straighten your legs to lift back up. ",    
@@ -90,6 +90,5 @@
         "description":"stand with your feet about shoulder-width apart. Rise up onto your toes, then slowly return to the starting position.",    
         "exercise_img":"https://www.outsideonline.com/wp-content/uploads/2022/01/cropcalfraises.jpg"    
     }        
-    ]       
-                
-}
+         
+]                

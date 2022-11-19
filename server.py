@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, flash, session, redirect
 from model import db, User, Workout, Exercise, connect_to_db
+from forms import WorkoutForm
 import crud
 
 
@@ -17,7 +18,7 @@ user_id = 1
 def homepage():
     #View homepage
     
-    return render_template("homepage.html")
+    return render_template("homepage.html", title = "Up Lifting", page = "homepage")
 
 @app.route('/users', methods=["POST"])
 def register_user():
@@ -63,7 +64,7 @@ def login():
         session["user_username"] = user.username
         flash(f"Welcome back, {user.username}!")
         
-    return render_template("workouts.html", username = user.username, password = user.password, user = user)      
+    return render_template("workouts.html", title = "workouts", page = "workouts", username = user.username, password = user.password, user = user)      
 
 @app.route('/logout')
 def logout():
@@ -78,10 +79,14 @@ def logout():
 def workouts():
     #View workouts
     
+    workout_form = WorkoutForm()
+    
     user = crud.get_user_by_id(user_id)
     workouts = User.get_all_workouts()
     
-    return render_template("workouts.html", title = "workouts", page = "workouts", workouts = workouts, user = user)
+    return render_template("workouts.html", title = "workouts", page = "workouts", workout_form = workout_form, workouts = workouts, user = user)
+
+
 
 @app.route('/exercises')
 def get_exercises():
@@ -89,7 +94,7 @@ def get_exercises():
     
     exercises = crud.get_exercises()
 
-    return render_template("all_exercises.html", exercises = exercises)
+    return render_template("exercises.html", title = "exercises", page = "exercises", exercises = exercises)
 
 @app.route('/exercises/<exercise_id>')
 def show_exercises(exercise_id):
@@ -97,7 +102,7 @@ def show_exercises(exercise_id):
     
     exercise = crud.get_exercise_by_id(exercise_id)
     
-    return render_template("exercise_detail.html", exercise = exercise)
+    return render_template("exercise_detail.html", page = "exercises", exercise = exercise)
 
 
 if __name__ == "__main__":
