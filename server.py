@@ -1,6 +1,6 @@
 #Server for workout app
 
-from flask import Flask, render_template, request, flash, session, redirect
+from flask import Flask, render_template, request, flash, session, redirect, url_for
 from model import db, User, Workout, Exercise, connect_to_db
 from forms import WorkoutForm
 import crud
@@ -84,9 +84,29 @@ def workouts(self):
     user = crud.get_user_by_id(user_id)
     workouts = User.get_all_workouts(self)
     
+    
+    
     return render_template("workouts.html", title = "workouts", page = "workouts", workout_form = workout_form, workouts = workouts, user = user)
 
-
+@app.route('/add_workout', methods = ["POST"])
+def add_workout():
+    #Create a new workout
+    
+    workout_form = WorkoutForm()
+    
+    if workout_form.validate_on_submit():
+        workout_name = workout_form.workout_name.data
+        description = workout_form.description.data
+        completed = workout_form.completed.data
+        
+        new_workout = Workout(workout_name, description = description, completed = completed)
+        db.session.add(new_workout)
+        db.session.commit()
+        
+        return redirect(url_for("workouts"))
+    else:
+        return redirect(url_for("workouts"))
+    
 
 @app.route('/exercises')
 def get_exercises():
