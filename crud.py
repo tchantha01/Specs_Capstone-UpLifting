@@ -24,12 +24,23 @@ def get_user_by_username(username):
     
     return User.query.filter_by(username = username).first()
 
+def get_all_workouts(self):
+    #Get all workouts
+    
+    workouts = []
+    
+    for user in self.users:
+        for workout in user.workouts:
+            workouts.append(workout)
+            
+    return workouts        
+    
+
 def create_exercise(exercise_name, description, exercise_img):
     
     exercise = Exercise(exercise_name = exercise_name, description = description, exercise_img = exercise_img)
     
     return exercise
-
 
 def get_exercises():
     #Show all exercises
@@ -53,6 +64,7 @@ def update_rating(rating_id, new_score):
     
     rating = Rating.query.get(rating_id)
     rating.score = new_score
+
     
 if __name__ == "__main__":
     from server import app

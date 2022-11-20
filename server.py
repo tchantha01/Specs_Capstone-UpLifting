@@ -76,13 +76,13 @@ def logout():
     return redirect('/')
 
 @app.route('/workouts')
-def workouts():
+def workouts(self):
     #View workouts
     
     workout_form = WorkoutForm()
     
     user = crud.get_user_by_id(user_id)
-    workouts = User.get_all_workouts()
+    workouts = User.get_all_workouts(self)
     
     return render_template("workouts.html", title = "workouts", page = "workouts", workout_form = workout_form, workouts = workouts, user = user)
 

@@ -4,5 +4,29 @@
 
 <h1>My workout</h1>
 
+<div>
+    <table class="table table-bordered">
+        <th>My Workout Planner</th>
+        <th>Description</th>
+        <th>Completed?</th>
+
+        {% for workout in workouts %}
+            <tr>
+                <td>{{ workout.workout_name }}</td>
+                <td>{{ workout.description }}</td>
+                <td>{{ workout.completed }}</td>
+                <td>
+                    <a href = "{{ url_for("update_workout", workout_id = workout.id) }}">
+                        <button type = "button" class = "btn btn-primary">Update</button>
+                    </a>
+                        <button type = "button" class = "btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        {% endfor %}  
+    </table> 
+</div>             
+                
+                        
+
 
 {% endblock %}
