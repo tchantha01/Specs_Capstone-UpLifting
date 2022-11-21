@@ -1,7 +1,7 @@
 #Server for workout app
 
 from flask import Flask, render_template, request, flash, session, redirect, url_for
-from model import db, User, Workout, Exercise, connect_to_db
+from model import db, User, Workout, connect_to_db
 from forms import WorkoutForm
 import crud
 
@@ -105,7 +105,7 @@ def add_workouts():
     else:
        return redirect(url_for("workout"))
    
-@app.route('/workout')
+@app.route('/workouts')
 def workout():
     #View workout
     
@@ -179,6 +179,39 @@ def show_exercises(exercise_id):
     exercise = crud.get_exercise_by_id(exercise_id)
     
     return render_template("exercise_detail.html", page = "exercises", exercise = exercise)
+
+@app.route("/exercises/<exercise_id>/ratings", methods = ["POST"])
+def create_rating(exercise_id):
+    #Rate exercises
+    
+    logged_in_username = session.get("username")
+    rating_score = request.form.get("rating")
+    
+    if logged_in_username is None:
+        flash("You must log in to rate an exercise.")
+    elif not rating_score:
+        flash("ERROR: you did not enter a rating.")   
+    else:
+        user = crud.get_user_by_username(logged_in_username)
+        exercise = crud.get_exercise_by_id(exercise_id)
+        rating = crud. create_rating(user, exercise, int(rating_score))
+        db.session.add(rating)
+        db.session.commit()
+        
+        flash("You rated this exercise {rating_score} out of 5.")     
+     
+    return redirect(f"/exercises/{exercise_id}")  
+
+@app.route("/update_rating", methods = ["POST"])
+def update_rating():
+    #Update the rating
+    
+    rating_id = request.json["rating_id"]
+    update_score = request.json["update_score"]
+    crud.update_rating(rating_id, update_score)
+    db.session.commit()
+    
+    return "Success!"  
 
 
 if __name__ == "__main__":
