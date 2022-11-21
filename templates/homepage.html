@@ -1,41 +1,37 @@
 {% extends "base.html" %}
 
-{% block body %}
-<h1>UpLifting</h1>
-<div>
-<h2>Create an Account</h2>
-    <form action="/users" method="POST">
-        <p>
-            Username <input type="text" name="username">
-        </p>
+{% block main %}
+<h1>Welcome to your workout planner</h1>
+
+<div class = "form-container mt-3">
+    <h3>Add Workout</h3>
+    <form action = "{{ url_for("add_workouts") }}" method = "POST">
+        {{ workout_form.csrf.token() }}
+      <div>
+        <div class = "form-group mt-3">
+            {{ workout_form.workout_name.label }}
+            {{ workout_form.workout_name }}
+        </div>
         
-        <p>
-            Password <input type="password" name="password">
-        </p>
-
-        <p>
-            <input type="submit">
-        </p>    
-
+        <div class = "form-group mt-3">
+            {{ workout_form.description.label }}
+            {{ workout_form.description }}
+        </div>
+        
+        <div class = "form-group mt-3">
+            {{ workout_form.completed.label }}
+            {{ workout_form.completed }}
+        </div>
+        
+        <div class = "form-group mt-3">
+            {{ workout_form.submit.label }}
+            {{ workout_form.submit }}
+        </div>
     </form>
-</div>
+</div>            
+                
+                        
 
-<div>
-    <h2>Log In</h2>
-    <form action="/login" method="POST">
-        <p>
-            Username <input type="text" name="username">
-        </p>
-        
-        <p>
-            Password <input type="password" name="password">
-        </p>
-        
-        <p>
-            <input type="submit">
-        </p>
-    </form>        
-</div>
 
 
 

@@ -15,6 +15,14 @@
         <nav class="nav">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
+                {% if page == "login" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('login') }}">
+                {% endif %}
+                      Login</a>
+                </li>
+                <li class="nav-item">
                 {% if page == "homepage" %}
                     <a class="nav-link active" aria-current="page" href="#">
                 {% else %}
@@ -23,10 +31,10 @@
                       Home</a>
                 </li>
                 <li class="nav-item">
-                {% if page == "workouts" %}
+                {% if page == "workout" %}
                     <a class="nav-link active" aria-current="page" href="#">
                 {% else %}
-                    <a class="nav-link" href="{{ url_for('workouts') }}">
+                    <a class="nav-link" href="{{ url_for('workout') }}">
                 {% endif %}
                   Workouts</a>
                 </li>
@@ -44,7 +52,7 @@
     
    
     <main>
-        {% block body %}
+        {% block main %}
         {% endblock %}
     </main>
 

@@ -1,37 +1,29 @@
 {% extends "base.html"%}
-{% block body %}
+{% block main %}
 
-
-<h1>My workout</h1>
-
-<div class = "form-container mt-3">
-    <h3>Add Workout</h3>
-    <form action = "{{ url_for("add_workout") }}" method = "POST">
-        {{ workout_form.csrf.token() }}
-      <div>
-        <div class = "form-group mt-3">
-            {{ workout_form.workout_name.label }}
-            {{ workout_form.workout_name }}
-        </div>
+<div>
+    <table class="table table-bordered">
+        <th>Workout Name</th>
+        <th>Description</th>
+        <th>Completed?</th>
         
-        <div class = "form-group mt-3">
-            {{ workout_form.description.label }}
-            {{ workout_form.description }}
-        </div>
-        
-        <div class = "form-group mt-3">
-            {{ workout_form.completed.label }}
-            {{ workout_form.completed }}
-        </div>
-        
-        <div class = "form-group mt-3">
-            {{ workout_form.submit.label }}
-            {{ workout_form.submit }}
-        </div>
-    </form>
-</div>            
+        {% for workout in workouts %}
+            <tr>
+                <td>{{ workout.workout_name }}</td>
+                <td>{{ workout.description }}</td>
+                <td>{{ workout.completed }}</td>
                 
-                        
+                <td>
+                    <a href="{{ url_for('update_workout', workout_id = workout.id) }}">
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </a>
+                    <a href="{{ url_for("delete_workout", workout_id = workout.id) }}">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+</div>
 
 
 {% endblock %}

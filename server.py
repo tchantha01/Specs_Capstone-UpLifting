@@ -14,11 +14,19 @@ app.jinja_env.undefined = StrictUndefined
 
 user_id = 1
 
+@app.route('/login')
+def login_page():
+    #View login page
+    
+    return render_template("login.html", title = "UP Lifting", page = "login")
+
 @app.route('/')
 def homepage():
     #View homepage
     
-    return render_template("homepage.html", title = "Up Lifting", page = "homepage")
+    workout_form = WorkoutForm()
+    
+    return render_template("homepage.html", title = "Up Lifting", page = "homepage", workout_form = workout_form)
 
 @app.route('/users', methods=["POST"])
 def register_user():
@@ -39,17 +47,17 @@ def register_user():
         
         return redirect('/')
     
-@app.route('/user')
-def get_user():
+# @app.route('/user')
+# def get_user():
     #View user
     
-    users = crud.get_users()
+    # users = crud.get_users()
     
-    return render_template("homepage.html", users = users)    
+    # return render_template("homepage.html", users = users)    
     
 @app.route('/login', methods=["POST"])
 def login():
-    # Log in user
+    # Login user
     
     username = request.form.get("username")
     password = request.form.get("password")
@@ -64,7 +72,7 @@ def login():
         session["user_username"] = user.username
         flash(f"Welcome back, {user.username}!")
         
-    return render_template("workouts.html", title = "workouts", page = "workouts", username = user.username, password = user.password, user = user)      
+    return render_template("workouts.html", title = "workouts", page = "workout")
 
 @app.route('/logout')
 def logout():
@@ -75,37 +83,85 @@ def logout():
     
     return redirect('/')
 
-@app.route('/workouts')
-def workouts(self):
-    #View workouts
+@app.route('/add_workouts', methods = ["POST"])
+def add_workouts():
+    #View  created workouts
     
     workout_form = WorkoutForm()
     
-    user = crud.get_user_by_id(user_id)
-    workouts = User.get_all_workouts(self)
-    
-    
-    
-    return render_template("workouts.html", title = "workouts", page = "workouts", workout_form = workout_form, workouts = workouts, user = user)
-
-@app.route('/add_workout', methods = ["POST"])
-def add_workout():
-    #Create a new workout
-    
-    workout_form = WorkoutForm()
+    # user = crud.get_user_by_id(user_id)
+    # workouts = User.get_all_workouts(self)
     
     if workout_form.validate_on_submit():
         workout_name = workout_form.workout_name.data
         description = workout_form.description.data
         completed = workout_form.completed.data
         
-        new_workout = Workout(workout_name, description = description, completed = completed)
+        new_workout = Workout(workout_name, completed, description = description)
         db.session.add(new_workout)
         db.session.commit()
         
-        return redirect(url_for("workouts"))
+        return redirect(url_for("workout"))
     else:
-        return redirect(url_for("workouts"))
+       return redirect(url_for("workout"))
+   
+@app.route('/workout')
+def workout():
+    #View workout
+    
+    user = User.query.get(user_id)
+    workouts = user.get_all_workouts()
+    
+    return render_template("workouts.html", title = "workouts", page = "workout", workouts = workouts)
+
+@app.route("/update_workout/<workout_id>", methods = ["GET", "POST"])
+def update_workout(workout_id):
+    #Update a workout
+    
+    form = WorkoutForm()
+    workout = Workout.query.get(workout_id)
+    
+    if request.method == "POST":
+        if form.validate_on_submit():
+            workout.workout_name = form.workout_name.data
+            if len(form.description.data) > 0:
+                workout.description = form.description.data
+            workout.completed = form.completed.data
+            db.session.add(workout)
+            db.session.commit()
+            return redirect(url_for("workouts"))
+        else:
+            return redirect(url_for("homepage"))
+    else:
+        return render_template("update_workout.html", title = f"Update {workout.workout_name}", page = "workout", workout = workout, form = form) 
+    
+@app.route("/delete_workout/<workout_id>")
+def delete_workout(workout_id):
+    
+    workout_to_delete = Workout.query.get(workout_id)
+    
+    try:
+        db.session.delete(workout_to_delete)
+        db.session.commit()
+        
+        flash("Workout was successfully deleted.")
+        
+        user = User.query.get(user_id)
+        workouts = user.get_all_workouts() 
+        
+        return render_template("workouts.html", title = "Workouts", page = "workout", workouts = workouts)
+    
+    except:
+        flash("Issues deleting workouts, please try again.")
+        
+        user = User.query.get(user_id)
+        workouts = user.get_all_workouts()
+        
+        return render_template("workouts.html", title = "Workouts", page = "workout", workouts = workouts)
+    
+           
+    
+
     
 
 @app.route('/exercises')
