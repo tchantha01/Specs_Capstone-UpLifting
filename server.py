@@ -112,7 +112,7 @@ def workout():
     user = User.query.get(user_id)
     workouts = user.get_all_workouts()
     
-    return render_template("workouts.html", title = "workouts", page = "workout", workouts = workouts)
+    return render_template("workouts.html", title = "workouts", page = "workout", workouts = workouts, user = user)
 
 @app.route("/update_workout/<workout_id>", methods = ["GET", "POST"])
 def update_workout(workout_id):

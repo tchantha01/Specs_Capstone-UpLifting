@@ -4,14 +4,16 @@
 {% block main %}
     
 <h1>All Exercises</h1>
+<div class ="exercises"
 <ul>    
     {% for exercise in exercises %}
-    <li>
+    <li class ="exercises">
         <a href="/exercises/{{ exercise.exercise_id }}">
             {{ exercise.exercise_name }}
         </a>
     </li>
     {% endfor %}
 </ul>    
+</div>
 
 {% endblock %}

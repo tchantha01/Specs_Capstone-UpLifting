@@ -21,6 +21,49 @@ main, header {
     align-items: center;
     margin-top: 10px;
 }
+
+form.login {
+    background-color: white;
+    border: 2px solid black;
+    padding: 30px;
+}
+
+ul {
+    list-style: none;
+  }
+
+ul li.exercises::before {
+    background-color: white;
+    border: 2px solid black;
+    padding: 30px;
+    content: "";
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///93dX6sqrFXVFw+O0OVk5svLTD7+/tPTFQ7OEA5NjwkIiZ0cnugnqWDgoN1c3ynpa2MipDm5ujd3N5raXBYVV1iYGhwbXeBf4eWlZq1tLfJyMxUU1deXGIqKCvS0tTY19vw8PGKiYyqqay/vsJLSFFFQUuFg4q1s7b7UNe5AAADe0lEQVR4nO3c7XKaQBSAYdRaSYoVEEUgxhAh8f6vsGKaaeKe3fCx69DM+/zsDHv2VWM1xvU8AAAAAAAAAAAAAAAAAAAAAAAAAPifLaosUs3z0sm0Mp8L07Jq4WTaxXqSBsFKEaRB4WBacV5XGBakk7WDaRdxuppopAfr0w6pbtgqja1PexMFuplnth86C8OsILI87K9Ye6O6uBP1d2Ezzc2daJ6ZW56W3/T2fFOYZgZTy9Omph+J1MUzG4UUdkWhC9+tsIzX/1z++xld4acddn1p/DQNPytGV1hc7XD61GX5IpxeCfORFebqFjs8dNfK1c31oypU74PzFtu/51AvblQjKqzkLbZdvBRun4Zp5m0LA3mDYdunm1guXI6ocCkXtn3LQSGFFFJIIYUUUkghhRRSSCGFFFI4wsKFom+hutIAfQuFlXxFvRIvNxdOAnWhQczD5MLpqlYX8u5USZ/C9F5Yqb970y9ntYWJsJL3Q9Gz8E5daYC7noXqShRSSCGFFFJIIYUUUkjhTQrvVds+hYmw0BBJn8KtsJD3U/H40Kdw/6iuNMDjvk/hg7AJCimkkEIKKWxR+EvVr1BYaIh+hcJC3m/Vc5OznH+QLb8snAgLDWGcdSlcZh+3uGz+6VlYSPooowzDuSL84nOLk+VPZk5ffG4hbbHDX9CqV5+vH9VnT/IWW3+6Jl19fhyMqVDe4sDCbESF8g5bF64j+Xrtt4BvXriSNxi1/TqCvjDYbiTb1E1hupWk7gonyUwncVCYbjTD9sHEUWGqDZzNttYLDdM2mp/DwYW627ThWy80DJvt3RRGppn+0nJh6JvGaXY4sPDVWJhZLsyMha9OCnfGQtvHHETGwh2FFFJIIYUUUji0MO7zmua2hZrXNG3fAZfi5XPjzNsW+pr3Bq2PjhB/zTM/jqjwKO4wbL269DCNDnk9msI6P0hb7HA+lnp9VHmjKvQqdYudjseKrw70m56fpcZV6K2nV0cbdj/h7OPfuzdGVijscKjxFdpGoV0UunD69oXf/z4sjIVHy9OMrxFrNyfSxabCF9szK9O02tE5u6+Gm3Vre9jCEDhLbE97H7rRJjq4UYsX/QPG2VHJ5a4WvuDn+3Xi4tTbyhcfqH69eXIw7d36lKmObs689crjLlCsdrnD87wBAAAAAAAAAAAAAAAAAAAAAAAA4Ab+AJ7f8CghTlWeAAAAAElFTkSuQmCC);
+    background-size: contain;
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    top: 0.1rem;
+    margin-right: 0.2rem;
+  }
+
+div.exercises {
+    background-color: white;
+    border: 2px solid black;
+    padding: 30px;
+}  
+
+p.description {
+    background-color: white;
+    border: 2px solid black;
+    padding: 30px;
+}
+
+img {
+    height: 900px;
+    width: 900px; 
+}
+
 .form-container {
     background-color: white;
     width: 30%;
@@ -48,25 +91,3 @@ main, header {
 }
 
 
-/* <div>
-    <table class="table table-bordered">
-        <th>My Workout Planner</th>
-        <th>Description</th>
-        <th>Completed?</th>
-
-        {% for workout in workouts %}
-            <tr>
-                <td>{{ workout.workout_name }}</td>
-                <td>{{ workout.description }}</td>
-                <td>{{ workout.completed }}</td>
-                <td>
-                    <a href = "{{ url_for("update_workout", workout_id = workout.id) }}">
-                        <button type = "button" class = "btn btn-primary">Update</button>
-                    </a>
-                        <button type = "button" class = "btn btn-danger">Delete</button>
-                </td>
-            </tr>
-        {% endfor %}  
-    </table> 
-</div>             
-                 */

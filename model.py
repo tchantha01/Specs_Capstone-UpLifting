@@ -24,7 +24,7 @@ class User(db.Model):
     def get_all_workouts(self):
         workouts = []
         
-        for user in self.users:
+        for user in self.user_id:
             for workout in user.workouts:
                 workouts.append(workout) 
                 
