@@ -24,16 +24,14 @@ def get_user_by_username(username):
     
     return User.query.filter_by(username = username).first()
 
-# def get_all_workouts(self):
-    #Get all workouts
+def get_workouts():
     
-    # workouts = []
+    return Workout.query.all()
+
+def get_workout_by_id(workout_id):
+    #Get workout by id
     
-    # for user in self.username:
-    #     for workout in user.workouts:
-    #         workouts.append(workout)
-            
-    # return workouts        
+    return Workout.query.get(workout_id)
     
 
 def create_exercise(exercise_name, description, exercise_img):

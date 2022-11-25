@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, BooleanField
+from wtforms import StringField, SubmitField, TextAreaField, BooleanField, validators, PasswordField
 from wtforms.validators import DataRequired, Length
 
 class WorkoutForm(FlaskForm):
@@ -7,5 +7,4 @@ class WorkoutForm(FlaskForm):
     description = TextAreaField("Description")
     completed = BooleanField("Completed?")
     submit = SubmitField("Submit")
-    
-    
+

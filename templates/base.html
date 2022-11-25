@@ -10,6 +10,11 @@
     <title>Workout Planner</title>
 </head>
 <body>
+    {% for msg in get_flashed_messages() %}
+      <p class="flash-msg">
+        {{ msg }}
+      </p>
+    {% endfor %}
     
     <header>
         <nav class="nav">
@@ -46,6 +51,15 @@
                 {% endif %}
                     Exercises</a>
                 </li>
+                <!--<li class="nav-item">
+                {% if page == "logout" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('logout') }}">
+                {% endif %}
+                    Logout</a>
+                </li> -->
+            
               </ul>
             </nav>
     </header>

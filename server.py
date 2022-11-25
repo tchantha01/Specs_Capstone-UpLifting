@@ -45,8 +45,9 @@ def register_user():
         db.session.commit()
         flash("New account created! Please log in.")
         
-        return redirect('/')
-    
+    return redirect("/login")
+        
+        
 # @app.route('/user')
 # def get_user():
     #View user
@@ -55,12 +56,13 @@ def register_user():
     
     # return render_template("homepage.html", users = users)    
     
-@app.route('/login', methods=["POST"])
+@app.route("/login", methods=["POST"])
 def login():
     # Login user
     
     username = request.form.get("username")
     password = request.form.get("password")
+    
     
     #Verify is user exist with this username
     user = crud.get_user_by_username(username)    
@@ -72,7 +74,7 @@ def login():
         session["user_username"] = user.username
         flash(f"Welcome back, {user.username}!")
         
-    return render_template("workouts.html", title = "workouts", page = "workout")
+    return redirect("/")
 
 @app.route('/logout')
 def logout():
@@ -81,7 +83,7 @@ def logout():
     del session["username"]     
     flash("Logged out.")
     
-    return redirect('/')
+    return redirect('/login')
 
 @app.route('/add_workouts', methods = ["POST"])
 def add_workouts():
@@ -101,16 +103,16 @@ def add_workouts():
         db.session.add(new_workout)
         db.session.commit()
         
-        return redirect(url_for("workout"))
+        return redirect(url_for("workouts"))
     else:
-       return redirect(url_for("workout"))
+       return redirect(url_for("workouts"))
    
 @app.route('/workouts')
 def workout():
     #View workout
     
     user = User.query.get(user_id)
-    workouts = user.get_all_workouts()
+    workouts = user.get_workouts()
     
     return render_template("workouts.html", title = "workouts", page = "workout", workouts = workouts, user = user)
 
