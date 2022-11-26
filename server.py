@@ -103,16 +103,16 @@ def add_workouts():
         db.session.add(new_workout)
         db.session.commit()
         
-        return redirect(url_for("workouts"))
+        return redirect(url_for("workout"))
     else:
-       return redirect(url_for("workouts"))
+       return redirect(url_for("workout"))
    
 @app.route('/workouts')
 def workout():
     #View workout
     
     user = User.query.get(user_id)
-    workouts = user.get_workouts()
+    workouts = crud.get_workouts()
     
     return render_template("workouts.html", title = "workouts", page = "workout", workouts = workouts, user = user)
 
