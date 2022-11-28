@@ -4,29 +4,30 @@
 <h1>Welcome to your workout planner</h1>
 
 <div class = "form-container mt-3">
-    <h3>Add Workout</h3>
+    <h3>Add Your Workout</h3>
     <form action = "{{ url_for("add_workouts") }}" method = "POST">
+        {{ workout_form.csrf_token() }}
+      
+            <div class = "form-group mt-3">
+                {{ workout_form.workout_name.label }}
+                {{ workout_form.workout_name }}
+            </div>
         
-      <div>
-        <div class = "form-group mt-3">
-            {{ workout_form.workout_name.label }}
-            {{ workout_form.workout_name }}
-        </div>
+            <div class = "form-group mt-3">
+                {{ workout_form.description.label }}
+                {{ workout_form.description }}
+            </div>
         
-        <div class = "form-group mt-3">
-            {{ workout_form.description.label }}
-            {{ workout_form.description }}
-        </div>
+            <div class = "form-group mt-3">
+                {{ workout_form.completed.label }}
+                {{ workout_form.completed }}
+            </div>
         
-        <div class = "form-group mt-3">
-            {{ workout_form.completed.label }}
-            {{ workout_form.completed }}
-        </div>
+            <div class = "form-group mt-3">
+            
+                {{ workout_form.submit(type = "SUBMIT", class = "btn btn-primary") }}
+            </div>
         
-        <div class = "form-group mt-3">
-           
-            {{ workout_form.submit(type = "SUBMIT", class = "btn btn-primary") }}
-        </div>
     </form>
 </div>            
                 

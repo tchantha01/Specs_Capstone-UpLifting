@@ -21,14 +21,14 @@ class User(db.Model):
         self.username = username
         self.password = password
         
-    def get_all_workouts(self):
-        workouts = []
+    # def get_all_workouts(self):
+    #     workouts = []
         
-        for user in self.user_id:
-            for workout in user.workouts:
-                workouts.append(workout) 
+    #     for user in self.username:
+    #         for workout in self.workouts:
+    #             workouts.append(workout) 
                 
-        return workouts           
+    #     return workouts           
         
 class Workout(db.Model):
     
@@ -47,6 +47,8 @@ class Workout(db.Model):
         
         if "description" in kwargs:
             self.description = kwargs["description"]
+            
+   
             
 class Exercise(db.Model):
     

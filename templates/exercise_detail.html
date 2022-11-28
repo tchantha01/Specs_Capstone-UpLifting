@@ -8,6 +8,7 @@
     {{ exercise.description }}
 </p>
 
+<div class = "exercise-rating">
 {% if session.get('user_username') %}
 <h2>Rate this exercise</h2>
 <form class = "rating" action="/exercises/{{ exercise.exercise_id }}/ratings" method="POST">
@@ -23,7 +24,7 @@
     <p><input type="submit", class = "btn btn-primary"></p>
 </form>
 {% endif %}              
-
+</div>
 <img src="{{ exercise.exercise_img }}">
 
 

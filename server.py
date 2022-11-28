@@ -69,6 +69,8 @@ def login():
     
     if not user or user.password != password:
         flash("The username or password you entered is incorrect.")
+        
+        return redirect("/login")
     else:
         #Log in user by storing the user's username in session
         session["user_username"] = user.username
@@ -91,15 +93,14 @@ def add_workouts():
     
     workout_form = WorkoutForm()
     
-    # user = crud.get_user_by_id(user_id)
-    # workouts = User.get_all_workouts(self)
+
     
     if workout_form.validate_on_submit():
         workout_name = workout_form.workout_name.data
         description = workout_form.description.data
         completed = workout_form.completed.data
         
-        new_workout = Workout(workout_name, completed, description = description)
+        new_workout = Workout(workout_name, completed, user_id, description = description)
         db.session.add(new_workout)
         db.session.commit()
         
@@ -112,7 +113,7 @@ def workout():
     #View workout
     
     user = User.query.get(user_id)
-    workouts = crud.get_workouts()
+    workouts = user.workouts
     
     return render_template("workouts.html", title = "workouts", page = "workout", workouts = workouts, user = user)
 
@@ -131,9 +132,9 @@ def update_workout(workout_id):
             workout.completed = form.completed.data
             db.session.add(workout)
             db.session.commit()
-            return redirect(url_for("workouts"))
+            return redirect(url_for("workout"))
         else:
-            return redirect(url_for("homepage"))
+            return redirect(url_for("workout"))
     else:
         return render_template("update_workout.html", title = f"Update {workout.workout_name}", page = "workout", workout = workout, form = form) 
     
@@ -149,15 +150,16 @@ def delete_workout(workout_id):
         flash("Workout was successfully deleted.")
         
         user = User.query.get(user_id)
-        workouts = user.get_all_workouts() 
+        workouts = user.workouts
         
         return render_template("workouts.html", title = "Workouts", page = "workout", workouts = workouts)
     
     except:
-        flash("Issues deleting workouts, please try again.")
+        # flash("Issues deleting workouts, please try again.")
         
         user = User.query.get(user_id)
-        workouts = user.get_all_workouts()
+        # workouts = user.get_all_workouts()
+        workouts = user.workouts
         
         return render_template("workouts.html", title = "Workouts", page = "workout", workouts = workouts)
     

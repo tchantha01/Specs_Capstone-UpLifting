@@ -14,15 +14,15 @@
                 <td>{{ workout.completed }}</td>
                 
                 <td>
-                    <a href="{{ url_for('update_workout', workout_id = workout.id) }}">
+                    <a href="{{ url_for('update_workout', workout_id = workout.workout_id) }}">
                         <button type="button" class="btn btn-primary">Update</button>
                     </a>
-                    <a href="{{ url_for("delete_workout", workout_id = workout.id) }}">
+                    <a href="{{ url_for("delete_workout", workout_id = workout.workout_id) }}">
                     <button type="button" class="btn btn-danger">Delete</button>
-                <td>
+                </td>
             </tr>
-            {% endfor %}
-        </table>
+        {% endfor %}
+    </table>
 </div>
 
 
