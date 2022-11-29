@@ -191,18 +191,18 @@ def create_rating(exercise_id):
     logged_in_username = session.get("username")
     rating_score = request.form.get("rating")
     
-    if logged_in_username is None:
+    if logged_in_username != logged_in_username:
         flash("You must log in to rate an exercise.")
     elif not rating_score:
         flash("ERROR: you did not enter a rating.")   
     else:
         user = crud.get_user_by_username(logged_in_username)
         exercise = crud.get_exercise_by_id(exercise_id)
-        rating = crud. create_rating(user, exercise, int(rating_score))
+        rating = crud.create_rating(user, exercise, int(rating_score))
         db.session.add(rating)
         db.session.commit()
         
-        flash("You rated this exercise {rating_score} out of 5.")     
+        flash(f"You rated this exercise {rating_score} out of 5.")     
      
     return redirect(f"/exercises/{exercise_id}")  
 
