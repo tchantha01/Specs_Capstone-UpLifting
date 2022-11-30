@@ -46,15 +46,7 @@ def register_user():
         flash("New account created! Please log in.")
         
     return redirect("/login")
-        
-        
-# @app.route('/user')
-# def get_user():
-    #View user
-    
-    # users = crud.get_users()
-    
-    # return render_template("homepage.html", users = users)    
+         
     
 @app.route("/login", methods=["POST"])
 def login():

@@ -22,14 +22,6 @@ class User(db.Model):
         self.username = username
         self.password = password
         
-    # def get_all_workouts(self):
-    #     workouts = []
-        
-    #     for user in self.username:
-    #         for workout in self.workouts:
-    #             workouts.append(workout) 
-                
-    #     return workouts           
         
 class Workout(db.Model):
     
