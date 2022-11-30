@@ -74,8 +74,8 @@ def login():
 def logout():
     #Logout user
     
-    del session["username"]     
-    flash("Logged out.")
+    del session["user_username"]    
+    flash(" You are logged out.")
     
     return redirect('/login')
 
